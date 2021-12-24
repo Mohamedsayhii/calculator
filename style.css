@@ -20,11 +20,15 @@ div {
   padding: 0;
 }
 
-.main {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 80px;
+}
+
+footer {
+  text-align: center;
 }
 
 .calculator {
@@ -32,7 +36,7 @@ div {
   display: flex;
   flex-direction: column;
   background-color: var(--calculator);
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 12px;
 }
 
@@ -46,21 +50,34 @@ div {
   background-color: var(--screen);
   border-radius: 8px;
   text-align: right;
-  font-size: 30px;
   padding: 0 8px 0 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.last-operation {
-  justify-self: flex-start;
+#lastOperation {
   font-size: 20px;
 }
 
-.current-operation {
-  min-height: 64px;
+#currentOperation {
   font-size: 40px;
+}
+
+#clearButton {
+  background-color: #faa;
+}
+
+#clearButton:hover {
+  background-color: #e99;
+}
+
+#deleteButton {
+  background-color: #aaf;
+}
+
+#deleteButton:hover {
+  background-color: #99e;
 }
 
 .keys {
