@@ -19,6 +19,9 @@ numberButtons.forEach((button) => {
     currentOperationScreen.textContent == 0
       ? (currentOperationScreen.textContent = button.textContent)
       : (currentOperationScreen.textContent += button.textContent);
+    if (firstOperand != null && currentOperation != null) {
+      currentOperationScreen.textContent = button.textContent;
+    }
   });
 });
 
@@ -27,13 +30,15 @@ operationButtons.forEach((button) => {
     if (
       currentOperationScreen.textContent == "" &&
       lastOperationScreen.textContent == ""
-    )
-      return;
-    firstOperand = currentOperationScreen.textContent;
-    currentOperationScreen.textContent = "";
-    lastOperationScreen.textContent = firstOperand + " " + button.textContent;
-
-    currentOperation = button.textContent;
+    ) {
+      firstOperand = "0";
+      lastOperationScreen.textContent = firstOperand + " " + button.textContent;
+      currentOperation = button.textContent;
+    } else {
+      firstOperand = currentOperationScreen.textContent;
+      lastOperationScreen.textContent = firstOperand + " " + button.textContent;
+      currentOperation = button.textContent;
+    }
   });
 });
 
